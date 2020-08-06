@@ -9,6 +9,7 @@ class ChangeLogModelSerializer(BaseCustomModelSerializer):
     who_name = serializers.CharField(source='who.get_full_name', read_only=True)
     act_text = serializers.CharField(source='get_act_type_display', read_only=True)
     task_descr = serializers.CharField(source='task.descr', read_only=True)
+    system_action_text = serializers.CharField(source='get_system_action_display', read_only=True)
 
     class Meta:
         model = models.ChangeLog
